@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="locked">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF8EE">
+  <title>A Little Birthday World 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- config.js MUST come before script.js -->
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+  <noscript><style>#intro{display:none}.reveal{opacity:1!important;transform:none!important}html.locked,html.locked body{overflow:auto!important}</style></noscript>
+</head>
+<body>
+  <div class="floaters" id="floaters" aria-hidden="true"></div>
+
+  <!-- SECTION 1: INTRO -->
+  <section id="intro" class="intro" aria-label="Opening surprise">
+    <div class="doodles" id="introDoodles" aria-hidden="true"></div>
+    <div class="intro-inner">
+      <p class="hand intro-msg">Psst… someone special has a little surprise waiting for you! 💌</p>
+      <div class="envelope" id="envelope" aria-hidden="true">
+        <div class="env-back"></div>
+        <div class="env-letter">💗</div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+      </div>
+      <button class="btn btn-pink" id="openBtn" type="button">Open Your Surprise ✨</button>
+      <button class="skip" id="skipBtn" type="button">Skip intro</button>
+    </div>
+  </section>
+
+  <button class="music-btn" id="musicBtn" type="button" aria-pressed="false" aria-label="Play background music" hidden><span aria-hidden="true">🎵</span></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <main id="main">
+    <!-- SECTION 2: HERO -->
+    <header class="section hero" id="hero">
+      <div class="stage">
+        <div class="card3d" id="heroCard">
+          <p class="badge">Today is YOUR day! 🎉</p>
+          <div class="cake" aria-hidden="true">
+            <div class="candles"><i class="candle"><b class="flame"></b></i><i class="candle"><b class="flame"></b></i><i class="candle"><b class="flame"></b></i></div>
+            <div class="tier t3"></div><div class="tier t2"></div><div class="tier t1"></div><div class="plate"></div>
+          </div>
+          <h1 class="title fancy" id="heroTitle">Happy Birthday! 🎂</h1>
+          <p class="sub" id="heroSub" data-cfg="heroSubtitle">Today, the world celebrates someone who makes it a little more beautiful. 💗</p>
+          <p class="countdown hand" id="countdown" hidden></p>
+          <button class="btn btn-pink" type="button" data-scroll="#letter">A Little Message for You 💌</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 3: LETTER -->
+    <section class="section letter-sec" id="letter" aria-labelledby="letterH">
+      <h2 id="letterH" class="title fancy reveal">A Letter Just for You 💌</h2>
+      <article class="paper reveal" id="paper">
+        <span class="deco d1" aria-hidden="true">🌷</span><span class="deco d2" aria-hidden="true">🌼</span>
+        <div id="letterBody" class="hand letter-body"></div>
+      </article>
+      <button class="btn btn-ghost" id="revealLetter" type="button">Show the whole letter ✨</button>
+    </section>
+
+    <!-- SECTION 4: GALLERY -->
+    <section class="section gallery-sec" id="gallery" aria-labelledby="galH">
+      <h2 id="galH" class="title fancy reveal">Our Little Memories 📸</h2>
+      <p class="hand note reveal">Tap a photo to see it in full ✨</p>
+      <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <!-- SECTION 5: STITCH-INSPIRED -->
+    <section class="section stitch-sec" id="stitch" aria-labelledby="stitchH">
+      <div class="stitch-art reveal" id="stitchArt">
+        <div class="stitch" aria-hidden="true"><i class="ear l"></i><i class="ear r"></i><i class="eye l"></i><i class="eye r"></i><i class="nose"></i><i class="smile"></i></div>
+      </div>
+      <h2 id="stitchH" class="title fancy reveal" data-cfg="stitch.heading">Your Little Blue Happiness Corner 💙</h2>
+      <p class="card-text reveal" data-cfg="stitch.message">May your life always be filled with little adventures, big smiles, unexpected happiness, and people who love you just the way you are. Ohana means family, and I hope you always feel surrounded by love. 💙🌺</p>
+      <button class="btn btn-blue" id="blueBtn" type="button">Send Me Some Blue Magic 💙</button>
+      <p class="magic" id="blueOut" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- SECTION 6: SHIN-CHAN-INSPIRED -->
+    <section class="section shin-sec" id="shin" aria-labelledby="shinH">
+      <div class="shin-art reveal" id="shinArt">
+        <div class="shin" aria-hidden="true"><i class="brow l"></i><i class="brow r"></i><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i></div>
+      </div>
+      <h2 id="shinH" class="title fancy reveal" data-cfg="shin.heading">Welcome to the Little Chaos Zone! 😂❤️</h2>
+      <div class="bubble reveal"><p data-cfg="shin.message">Official birthday announcement: Today, you have full permission to eat extra cake, laugh at silly things, be a little dramatic, and enjoy being the main character. Birthday rules are birthday rules! 😂🎂</p></div>
+      <p class="quote hand reveal" data-cfg="shin.quote">“Age is just a number. Cake is forever.” 🎂</p>
+      <button class="btn btn-red" id="laughBtn" type="button">Make Me Laugh 😂</button>
+      <div class="bubble bubble-out" id="laughOut" role="status" aria-live="polite" hidden><p></p></div>
+    </section>
+
+    <!-- SECTION 7: VIDEOS -->
+    <section class="section video-sec" id="videos" aria-labelledby="vidH">
+      <h2 id="vidH" class="title fancy reveal">Little Moments, Big Memories 🎞️</h2>
+      <div class="video-list" id="videoList"></div>
+    </section>
+
+    <!-- SECTION 8: WISHES -->
+    <section class="section wish-sec" id="wishes" aria-labelledby="wishH">
+      <h2 id="wishH" class="title fancy reveal">Little Wishes for Your Big Day ✨</h2>
+      <p class="hand note reveal">Tap each card to open it 🌷</p>
+      <div class="wish-grid" id="wishGrid"></div>
+    </section>
+
+    <!-- SECTION 9: SECRET SURPRISE -->
+    <section class="section gift-sec" id="surprise" aria-labelledby="giftH">
+      <h2 id="giftH" class="title fancy reveal" data-cfg="giftPrompt">Wait… there's one last little surprise! 🎁</h2>
+      <div class="gift" id="gift" aria-hidden="true">
+        <span class="heart">💗</span>
+        <div class="base"></div>
+        <div class="lid"><span class="bow">🎀</span></div>
+      </div>
+      <button class="btn btn-pink" id="giftBtn" type="button">Open Your Last Surprise 💗</button>
+      <div class="final paper" id="finalMsg" hidden></div>
+    </section>
+
+    <!-- SECTION 10: ENDING -->
+    <footer class="section ending" id="ending">
+      <p class="title fancy" data-cfg="endingLine1">Made with love, just for you. 💗</p>
+      <p class="card-text" data-cfg="endingLine2">Your birthday, your little world, your special memories. 🌷</p>
+      <p class="signature hand" data-cfg="signature">— Me</p>
+      <button class="btn btn-ghost" type="button" data-scroll="top">Back to the Beginning ↗</button>
+    </footer>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close photo">✕</button>
+    <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
+    <div class="lb-stage"><img id="lbImg" alt=""></div>
+    <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">›</button>
+    <p class="lb-cap"><span id="lbCap"></span> <small id="lbCount"></small></p>
+  </div>
+</body>
+</html>
